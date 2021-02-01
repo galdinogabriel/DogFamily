@@ -1,8 +1,8 @@
 # dogfamily
 
-A new Flutter project.
+DofFamily é um aplicativo mobile para pessoas interresadas em doar ou adotar caes, para isso o aplicativo fornece uma ambiente digital mobile desenvolvido apartir do framework Flutter.
 
-## Getting Started
+## Como testar
 
 This project is a starting point for a Flutter application.
 
