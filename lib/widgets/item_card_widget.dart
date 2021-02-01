@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ItemCardWidget extends StatelessWidget {
-  String urlImagem;
-  Widget description;
+  final String urlImagem;
+  final Widget description;
 
   ItemCardWidget({this.urlImagem, this.description});
 

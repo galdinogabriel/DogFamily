@@ -1,3 +1,5 @@
+import 'package:dogfamily/routes/app_routes.dart';
+import 'package:dogfamily/screens/tela_anunciar_cao.dart';
 import 'package:dogfamily/screens/tela_feed.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +15,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: TelaFeed(),
-     
+      routes: {
+        AppRoutes.HOME: (ctx) => TelaFeed(),
+        AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnunciarCao(),
+      },
     );
   }
 }
