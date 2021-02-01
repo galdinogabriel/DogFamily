@@ -8,16 +8,13 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
-
-  
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Scrollbar(
         child: SingleChildScrollView(
-          
           padding: EdgeInsets.all(0),
-                  child: Column(
+          child: Column(
             children: <Widget>[
               Container(
                 color: Theme.of(context).accentColor,
@@ -27,7 +24,10 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: Theme.of(context).accentColor,
-                    child: Icon(Icons.person, color: Colors.white,),
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
                   ),
                   title: Text(
                     "Acesse sua conta agora!",
@@ -42,8 +42,8 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               SizedBox(
                 width: 15,
               ),
-              _buildTile(Icons.cloud_circle, "Anúncios", true),
-              _buildTile(Icons.edit, "Inserir anúncio", false),
+              _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
+              _buildTile(Icons.edit, "Doar um cão", false),
               _buildTile(Icons.forum, "Chat", false),
               _buildTile(Icons.favorite, "Favoritos", false),
               _buildTile(Icons.person, "Minha Conta", false),

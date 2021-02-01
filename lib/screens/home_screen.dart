@@ -42,14 +42,6 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
-            child: Text(
-              "Região de...",
-              style:
-                  TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Expanded(
             child: Container(
               height: 55,
               alignment: Alignment.center,
@@ -60,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               child: Text(
-                "Categoria",
+                "Raça",
                 style: TextStyle(
                     color: Theme.of(context).accentColor, fontSize: 25),
                 textAlign: TextAlign.center,
@@ -88,26 +80,26 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: ItemCardWidget(
               urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
+                  "https://i.pinimg.com/474x/32/2c/65/322c65d8bfc0e4e10ee48173aa44de3d.jpg",
               description: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Venha comprar esse baguio",
+                    "Bruna matos",
                     style: TextStyle(
                       fontSize: 15,
                     ),
                   ),
                   Text(
-                    "R\$ 94.452,33",
+                    "Dáumata filhote",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 23,
                     ),
                   ),
                   Text(
-                    "05 December 00:40, Jardim Verão",
+                    "25 Dezembro, Estrela",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
@@ -118,26 +110,26 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: ItemCardWidget(
               urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
+                  "https://2.bp.blogspot.com/-WYAQ6WLxLFI/TxzX3fiaULI/AAAAAAAAAVE/Zv7k3yZXTD0/s1600/cao-do-demo.jpg",
               description: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Venha comprar esse baguio",
+                    "Gabriel Matos",
                     style: TextStyle(
                       fontSize: 15,
                     ),
                   ),
                   Text(
-                    "R\$ 94.452,33",
+                    "Pinscher Raivoso",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 23,
                     ),
                   ),
                   Text(
-                    "05 December 00:40, Jardim Verão",
+                    "21 Setembro, Milagre",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
@@ -148,26 +140,26 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: ItemCardWidget(
               urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
+                  "https://data.whicdn.com/images/263819002/original.jpg",
               description: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Venha comprar esse baguio",
+                    "Geraldo Pirez",
                     style: TextStyle(
                       fontSize: 15,
                     ),
                   ),
                   Text(
-                    "R\$ 94.452,33",
+                    "Vira-lata antipático",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 23,
                     ),
                   ),
                   Text(
-                    "05 December 00:40, Jardim Verão",
+                    "10 Junho, Cohab",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
@@ -178,91 +170,29 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: ItemCardWidget(
               urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
+                  "https://www.folhavitoria.com.br/geral/blogs/petblog/wp-content/uploads/2017/03/dog-eyebrow-2.jpg",
               description: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Venha comprar esse baguio",
+                    "Pimentel",
                     style: TextStyle(
                       fontSize: 15,
                     ),
                   ),
                   Text(
-                    "R\$ 94.452,33",
+                    "roti valew",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 23,
                     ),
                   ),
                   Text(
-                    "05 December 00:40, Jardim Verão",
+                    "13 Abril, Pirapora",
                     style: TextStyle(color: Colors.grey),
                   ),
                 ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: ItemCardWidget(
-              urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
-              description: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    "Venha comprar nosso mascote!",
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  ),
-                  Text(
-                    "R\$ 94.452,33",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 23,
-                    ),
-                  ),
-                  Text(
-                    "05 December 00:40, Jardim Verão",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: ItemCardWidget(
-              urlImagem:
-                  "https://cdn-images-1.medium.com/max/1200/1*E9T7YsI_ZU8gk4CewQg_QA.jpeg",
-              description: Container(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      "Venha comprar nosso mascote!",
-                      style: TextStyle(
-                        fontSize: 15,
-                      ),
-                    ),
-                    Text(
-                      "R\$ 94.452,33",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ),
-                    ),
-                    Text(
-                      "05 December 00:40, Jardim Verão",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                ),
               ),
             ),
           ),
@@ -284,7 +214,7 @@ class HomeScreen extends StatelessWidget {
           width: 170,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: Colors.orange,
+            color: Colors.redAccent,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -295,7 +225,7 @@ class HomeScreen extends StatelessWidget {
                 size: 35,
               ),
               Text(
-                "Anunciar agora",
+                "Doar um cão",
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ],
