@@ -1,3 +1,4 @@
+import 'package:dogfamily/screens/tela_anunciar_cao.dart';
 import 'package:flutter/material.dart';
 
 class BotaoAnunciarCao extends StatelessWidget {
@@ -25,11 +26,15 @@ class BotaoAnunciarCao extends StatelessWidget {
                 color: Colors.white,
                 size: 35,
               ),
-              Text(
-                "Doar um cão",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ],
+             ElevatedButton(
+          child: Text('Anuncie um Cão'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => TelaAnunciarCao())
+            );
+          },
+        ),],
           ),
         ),
       ),
