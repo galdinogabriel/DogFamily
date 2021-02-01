@@ -1,78 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:dogfamily/widgets/custom_drawer_widget.dart';
 import 'package:dogfamily/widgets/item_card_widget.dart';
+import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class AnunciosCaes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      drawer: CustomDrawerWidget(),
-      appBar: AppBar(
-        title: Text("Dog Family"),
-        centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.favorite_border, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: Container(
-        child: Stack(
-          children: <Widget>[_buildFirstLayer(context), _buildButtom()],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFirstLayer(BuildContext context) {
-    return Column(
-      children: <Widget>[_buildTopbar(context), _buildItems()],
-    );
-  }
-
-  Widget _buildTopbar(BuildContext context) {
-    return Material(
-      elevation: 6,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              height: 55,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                border: BorderDirectional(
-                  start: BorderSide(color: Colors.grey),
-                  end: BorderSide(color: Colors.grey),
-                ),
-              ),
-              child: Text(
-                "Raça",
-                style: TextStyle(
-                    color: Theme.of(context).accentColor, fontSize: 25),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-          Expanded(
-            child: Text(
-              "Filtros",
-              style:
-                  TextStyle(color: Theme.of(context).accentColor, fontSize: 25),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildItems() {
     return Expanded(
       child: ListView(
         children: <Widget>[
@@ -197,40 +128,6 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildButtom() {
-    return Container(
-      padding: EdgeInsets.only(bottom: 30),
-      alignment: Alignment.bottomCenter,
-      child: Material(
-        elevation: 5,
-        borderRadius: BorderRadius.circular(50),
-        color: Colors.transparent,
-        child: Container(
-          height: 50,
-          width: 170,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(50),
-            color: Colors.redAccent,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Icon(
-                Icons.camera_alt,
-                color: Colors.white,
-                size: 35,
-              ),
-              Text(
-                "Doar um cão",
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
