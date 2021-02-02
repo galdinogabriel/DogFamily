@@ -4,6 +4,7 @@ import '../models/anuncio.dart';
 
 List<Usuario> USUARIOS = [
   Usuario(
+    id: 1,
     email: "matos0@gmail.com",
     endereco: "Rua Raimundo Padua Costa Mota",
     imagemPerfilURL: "www.photo1.com",
@@ -12,6 +13,7 @@ List<Usuario> USUARIOS = [
     cao: caes[0],
   ),
   Usuario(
+    id: 2,
     email: "geraldo0@gmail.com",
     endereco: "Duque de Caxias",
     imagemPerfilURL: "www.photo2.com",
@@ -20,6 +22,7 @@ List<Usuario> USUARIOS = [
     cao: caes[1],
   ),
   Usuario(
+      id: 3,
       email: "pimentel0@gmail.com",
       endereco: "Altamira",
       imagemPerfilURL: "www.photo3.com",
@@ -62,10 +65,12 @@ List<Cao> caes = [
 
 List<Anuncio> ANUNCIOS_DETALHES = [
   Anuncio(
+      id: 1,
       anunciante: USUARIOS[0],
       quandoCriado: DateTime.now(),
       descricao: "carinhoso e ponposo"),
   Anuncio(
+      id: 2,
       anunciante: USUARIOS[1],
       quandoCriado: DateTime.now(),
       descricao: "cheiroso e chavoso"),
