@@ -1,13 +1,5 @@
-import 'package:dogfamily/widgets/anuncios_caes.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:flutter/material.dart';
 import 'package:dogfamily/widgets/drawer_customizado.dart';
-import 'package:dogfamily/widgets/item_card_widget.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
-import 'package:dogfamily/widgets/botao_anunciar_cao.dart';
-import 'package:dogfamily/screens/tela_anunciar_cao.dart';
-
-
 
 class TelaAnunciarCao extends StatelessWidget {
   @override
@@ -17,18 +9,13 @@ class TelaAnunciarCao extends StatelessWidget {
       appBar: AppBar(
         title: Text("Cadastro do cão"),
         centerTitle: true,
-        actions: <Widget>[
-          
-          
-        ],
+        actions: <Widget>[],
       ),
       body: MyCustomForm(),
-      
     );
   }
-
-  
 }
+
 // Create a Form widget.
 class MyCustomForm extends StatefulWidget {
   @override
@@ -40,9 +27,6 @@ class MyCustomForm extends StatefulWidget {
 // Create a corresponding State class.
 // This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
-
-
-  
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
   //
@@ -59,9 +43,7 @@ class MyCustomFormState extends State<MyCustomForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Nome do cão'
-  ),
+            decoration: InputDecoration(labelText: 'Nome do cão'),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Digite o nome do cão!';
@@ -70,9 +52,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Raça'
-  ),
+            decoration: InputDecoration(labelText: 'Raça'),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Digite a raça do cão!';
@@ -81,9 +61,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Idade'
-  ),
+            decoration: InputDecoration(labelText: 'Idade'),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Digite a idade do cão!';
@@ -92,9 +70,7 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
           TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Porte'
-  ),
+            decoration: InputDecoration(labelText: 'Porte'),
             validator: (value) {
               if (value.isEmpty) {
                 return 'Digite o porte do cão! (P,M,G)';
@@ -103,10 +79,9 @@ class MyCustomFormState extends State<MyCustomForm> {
             },
           ),
 
-
           // simple usage
 
-      Padding(
+          Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
             child: ElevatedButton(
               onPressed: () {
@@ -124,6 +99,5 @@ class MyCustomFormState extends State<MyCustomForm> {
         ],
       ),
     );
-  }}
-
- 
+  }
+}
