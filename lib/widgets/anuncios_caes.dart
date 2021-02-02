@@ -1,6 +1,5 @@
 import 'package:dogfamily/widgets/item_card_widget.dart';
 import 'package:flutter/material.dart';
-import '../models/usuario.dart';
 import '../data/data.dart';
 import '../models/anuncio.dart';
 
