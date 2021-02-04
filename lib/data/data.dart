@@ -6,7 +6,7 @@ List<Usuario> USUARIOS = [
   Usuario(
     id: 1,
     email: "matos0@gmail.com",
-    endereco: "Rua Raimundo Padua Costa Mota",
+    endereco: "Cohab",
     imagemPerfilURL: "www.photo1.com",
     login: "matos",
     senha: "1313",

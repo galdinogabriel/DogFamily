@@ -1,3 +1,4 @@
+import 'package:dogfamily/models/anuncio.dart';
 import 'package:dogfamily/models/usuario.dart';
 import 'package:flutter/foundation.dart';
 
@@ -20,6 +21,17 @@ class Cao {
     @required this.usaRemedioControlado,
     @required this.porte,
   });
+
+  // ignore: missing_return
+  String getPorte() {
+    if (porte == Porte.Grande) {
+      return "Grande";
+    } else if (porte == Porte.Medio) {
+      return "Médio";
+    } else if (porte == Porte.Pequeno) {
+      return "pequeno";
+    }
+  }
 }
 
 enum Porte {

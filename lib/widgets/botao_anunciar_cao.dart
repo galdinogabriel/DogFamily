@@ -13,7 +13,7 @@ class BotaoAnunciarCao extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.TELA_ANUNCIO);
+            Navigator.of(context).pushNamed(AppRoutes.TELA_CADASTRAR_CAO);
           },
           child: Container(
             height: 50,

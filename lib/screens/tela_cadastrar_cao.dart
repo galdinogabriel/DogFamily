@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:dogfamily/widgets/drawer_customizado.dart';
 
-class TelaAnunciarCao extends StatelessWidget {
+class TelaCadastrarCao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
