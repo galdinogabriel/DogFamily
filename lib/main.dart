@@ -1,5 +1,6 @@
 import 'package:dogfamily/routes/app_routes.dart';
-import 'package:dogfamily/screens/tela_anunciar_cao.dart';
+import 'package:dogfamily/screens/tela_cadastrar_cao.dart';
+import 'package:dogfamily/screens/tela_anuncio.dart';
 import 'package:dogfamily/screens/tela_feed.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         AppRoutes.HOME: (ctx) => TelaFeed(),
-        AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnunciarCao(),
+        AppRoutes.TELA_CADASTRAR_CAO: (ctx) => TelaCadastrarCao(),
+        AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnuncio()
       },
     );
   }

@@ -1,13 +1,11 @@
-import 'package:dogfamily/widgets/anuncios_caes.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:flutter/material.dart';
 import 'package:dogfamily/widgets/drawer_customizado.dart';
-import 'package:dogfamily/widgets/item_card_widget.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
-import 'package:dogfamily/widgets/botao_anunciar_cao.dart';
-import 'package:dogfamily/screens/tela_anunciar_cao.dart';
 
+<<<<<<< HEAD:lib/screens/tela_anunciar_cao.dart
 class TelaAnunciarCao extends StatelessWidget {
+=======
+class TelaCadastrarCao extends StatelessWidget {
+>>>>>>> a64331dd74e03f08cf6e8bde2f0e010bbf8046ba:lib/screens/tela_cadastrar_cao.dart
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,11 +14,16 @@ class TelaAnunciarCao extends StatelessWidget {
         title: Text("Cadastro do cão"),
         centerTitle: true,
         actions: <Widget>[],
+<<<<<<< HEAD:lib/screens/tela_anunciar_cao.dart
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(child: MyCustomForm()),
       ),
+=======
+      ),
+      body: MyCustomForm(),
+>>>>>>> a64331dd74e03f08cf6e8bde2f0e010bbf8046ba:lib/screens/tela_cadastrar_cao.dart
     );
   }
 }

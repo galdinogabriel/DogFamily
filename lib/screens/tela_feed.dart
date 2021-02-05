@@ -2,10 +2,8 @@ import 'package:dogfamily/widgets/anuncios_caes.dart';
 import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:flutter/material.dart';
 import 'package:dogfamily/widgets/drawer_customizado.dart';
-import 'package:dogfamily/widgets/item_card_widget.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:dogfamily/widgets/botao_anunciar_cao.dart';
-import 'package:dogfamily/screens/tela_anunciar_cao.dart';
+
 class TelaFeed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

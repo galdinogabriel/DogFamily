@@ -1,26 +1,20 @@
-import 'package:dogfamily/screens/tela_anunciar_cao.dart';
+import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class BotaoAnunciarCao extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(50),
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TelaAnunciarCao(),
-          ),
-        );
-      },
-      child: Container(
-        padding: EdgeInsets.only(bottom: 30),
-        alignment: Alignment.bottomCenter,
-        child: Material(
-          elevation: 5,
-          borderRadius: BorderRadius.circular(50),
-          color: Colors.transparent,
+    return Container(
+      padding: EdgeInsets.only(bottom: 30),
+      alignment: Alignment.bottomCenter,
+      child: Material(
+        elevation: 5,
+        borderRadius: BorderRadius.circular(50),
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context).pushNamed(AppRoutes.TELA_CADASTRAR_CAO);
+          },
           child: Container(
             height: 50,
             width: 170,
