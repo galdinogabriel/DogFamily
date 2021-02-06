@@ -41,7 +41,7 @@ class MyCustomForm extends StatefulWidget {
 // This class holds data related to the form.
 class MyCustomFormState extends State<MyCustomForm> {
 
-
+bool _enabled = false;
   
   // Create a global key that uniquely identifies the Form widget
   // and allows validation of the form.
@@ -52,77 +52,151 @@ class MyCustomFormState extends State<MyCustomForm> {
 
   @override
   Widget build(BuildContext context) {
+    var _onPressed;
+    if(_enabled){
+      _onPressed = (){
+        print("tap");
+      };
+    }
     // Build a Form widget using the _formKey created above.
     return Form(
+      child:
+      Padding(
+        padding: EdgeInsets.all(30.0),
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Nome do cão'
-  ),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Digite o nome do cão!';
-              }
-              return null;
-            },
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration:BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromRGBO(143, 148, 251, .2),
+                  blurRadius: 20.0,
+                  offset: Offset(0,10)
+                )
+              ]
+              ),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      border: Border(bottom: BorderSide(color: Colors.grey[100]))
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Raça do cão",
+                        hintStyle: TextStyle(color: Colors.grey[400])
+                      ),
+                    )
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Idade do cão",
+                        hintStyle: TextStyle(color: Colors.grey[400])
+                      ),
+                    )
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Link da foto",
+                        hintStyle: TextStyle(color: Colors.grey[400])
+                      ),
+                    )
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Descrição",
+                        hintStyle: TextStyle(color: Colors.grey[400])
+                      ),
+                    )
+                    ),
+                     Container( child: Column(
+          children: [
+                        Switch(
+                            value: _enabled,
+                            onChanged: (check) {
+                              setState(() {
+                                _enabled = check;
+                              });
+                            }),
+                        RaisedButton(
+                          disabledColor: Colors.black,
+                          disabledTextColor: Colors.white,
+                          onPressed: _enabled
+                              ? null
+                              : () {
+                                  print("Clicked");
+                                },
+                          child: Text("Macho"),
+                          
+                          
+                        ),
+                        Switch(
+                            value: _enabled,
+                            onChanged: (check) {
+                              setState(() {
+                                _enabled = check;
+                              });
+                            }),
+                        RaisedButton(
+                          disabledColor: Colors.black,
+                          disabledTextColor: Colors.white,
+                          onPressed: _enabled
+                              ? null
+                              : () {
+                                  print("Clicked");
+                                },
+                          child: Text("Fêmea"),
+                          
+                          
+                        ),
+                 ],
+        ),),
+                  
+                  
+                  
+
+                ],
+              )   
           ),
-          TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Raça'
-  ),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Digite a raça do cão!';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Idade'
-  ),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Digite a idade do cão!';
-              }
-              return null;
-            },
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-    labelText: 'Porte'
-  ),
-            validator: (value) {
-              if (value.isEmpty) {
-                return 'Digite o porte do cão! (P,M,G)';
-              }
-              return null;
-            },
+          SizedBox(height: 30,),
+          Container(
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            gradient: LinearGradient(
+              colors: [
+                Color.fromRGBO(143, 148, 251, 1),
+                Color.fromRGBO(143, 148, 251, .6),
+              ]
+            )
           ),
 
-
-          // simple usage
-
-      Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: ElevatedButton(
-              onPressed: () {
-                // Validate returns true if the form is valid, or false
-                // otherwise.
-                if (_formKey.currentState.validate()) {
-                  // If the form is valid, display a Snackbar.
-                  Scaffold.of(context)
-                      .showSnackBar(SnackBar(content: Text('Processing Data')));
-                }
-              },
-              child: Text('Submit'),
-            ),
+          child: Center(
+            child: Text("Cadastrar", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
           ),
+          )
         ],
+      )
+      
+      
       ),
+      
     );
   }}
 
