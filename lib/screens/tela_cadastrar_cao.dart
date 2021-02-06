@@ -15,7 +15,7 @@ class TelaAnunciarCao extends StatelessWidget {
     
     return Scaffold(
       
-       // backgroundColor: Colors.blue.shade200,
+       backgroundColor: Colors.blue.shade200,
       
       drawer: CustomDrawerWidget(),
       appBar: AppBar(
