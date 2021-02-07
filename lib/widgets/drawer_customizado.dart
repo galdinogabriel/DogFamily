@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../routes/app_routes.dart';
+
 class CustomDrawerWidget extends StatefulWidget {
   @override
   CustomDrawerWidgetState createState() {
@@ -8,6 +10,10 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
+  void onTap() {
+    Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT_HOME);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -44,7 +50,7 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               ),
               _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
               _buildTile(Icons.edit, "Doar um cão", false),
-              _buildTile(Icons.forum, "Chat", false),
+              _buildTile(Icons.forum, "Chat", false, onTap),
               _buildTile(Icons.favorite, "Favoritos", false),
               _buildTile(Icons.person, "Minha Conta", false),
               Divider(),
@@ -61,12 +67,15 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
     );
   }
 
-  Widget _buildTile(IconData icon, String text, bool selected) {
+  Widget _buildTile(IconData icon, String text, bool selected,
+      [Function onTap]) {
     return ListTileTheme(
       selectedColor: Colors.orange,
       child: ListTile(
         selected: selected,
-        onTap: () {},
+        onTap: () {
+          onTap();
+        },
         leading: Icon(
           icon,
           size: 25,
