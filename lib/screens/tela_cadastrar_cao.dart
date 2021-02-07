@@ -3,6 +3,7 @@ import 'package:dogfamily/models/anuncio.dart';
 import 'package:dogfamily/models/cao.dart';
 import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class TelaCadastrarCao extends StatelessWidget {
   @override
@@ -150,6 +151,10 @@ class MyCustomFormState extends State<MyCustomForm> {
                     Container(
                         padding: EdgeInsets.all(8.0),
                         child: TextFormField(
+                          keyboardType: TextInputType.number,
+                          inputFormatters: <TextInputFormatter>[
+                            FilteringTextInputFormatter.digitsOnly
+                          ],
                           validator: (value) {
                             if (value.isEmpty) {
                               return 'Preencha o campo obrigatório';
