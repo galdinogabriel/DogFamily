@@ -22,24 +22,27 @@ class BotaoAnunciarCao extends StatelessWidget {
           },
           child: Container(
             height: 50,
-            width: 170,
+            width: 190,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: Colors.redAccent,
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Icon(
-                  Icons.camera_alt,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                Text(
-                  "Anuncie um cão",
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                )
-              ],
+            child: Padding(
+              padding: EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Icon(
+                    Icons.camera_alt,
+                    color: Colors.white,
+                    size: 35,
+                  ),
+                  Text(
+                    "Anuncie um cão",
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  )
+                ],
+              ),
             ),
           ),
         ),
