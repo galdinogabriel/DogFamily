@@ -1,5 +1,6 @@
 import 'package:dogfamily/data/data.dart';
 import 'package:dogfamily/models/anuncio.dart';
+import 'package:dogfamily/models/usuario.dart';
 import 'package:dogfamily/widgets/anuncios_caes.dart';
 import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:flutter/material.dart';
@@ -17,20 +18,19 @@ class _TelaFeedState extends State<TelaFeed> {
 
   void addAnuncio(Anuncio anuncio) {
     setState(() {
-      print(anuncio.cao.temDoenca);
-      print(anuncio.cao.temDeficienciaFisica);
-      print(anuncio.cao.usaRemedioControlado);
       anuncios.add(anuncio);
-      print("foi adicionado");
-      print(anuncios.length);
     });
+  }
+
+  void salvarContaUsuario() {
+    print("coisou");
   }
 
   @override
   Widget build(BuildContext context) {
     print("${anuncios.length} inicial");
     return Scaffold(
-      drawer: CustomDrawerWidget(),
+      drawer: CustomDrawerWidget(salvarContaUsuario),
       appBar: AppBar(
         title: Text("Dog Family"),
         centerTitle: true,

@@ -1,6 +1,11 @@
+import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawerWidget extends StatefulWidget {
+  final Function salvarDadosUsuarios;
+
+  CustomDrawerWidget(this.salvarDadosUsuarios);
+
   @override
   CustomDrawerWidgetState createState() {
     return new CustomDrawerWidgetState();
@@ -8,8 +13,15 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
+  onSelectAction() {
+    Navigator.of(context).pushNamed(AppRoutes.TELA_CONTA_USUARIO,
+        arguments: widget.salvarDadosUsuarios);
+  }
+
   @override
   Widget build(BuildContext context) {
+    widget.salvarDadosUsuarios();
+
     return Drawer(
       child: Scrollbar(
         child: SingleChildScrollView(
@@ -46,7 +58,7 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               _buildTile(Icons.edit, "Doar um cão", false),
               _buildTile(Icons.forum, "Chat", false),
               _buildTile(Icons.favorite, "Favoritos", false),
-              _buildTile(Icons.person, "Minha Conta", false),
+              _buildTile(Icons.person, "Minha Conta", false, onSelectAction),
               Divider(),
               _buildBottomTile("Ajuda e Contato"),
               _buildBottomTile("Dúvidas Frequentes"),
@@ -61,12 +73,13 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
     );
   }
 
-  Widget _buildTile(IconData icon, String text, bool selected) {
+  Widget _buildTile(IconData icon, String text, bool selected,
+      [Function action]) {
     return ListTileTheme(
       selectedColor: Colors.orange,
       child: ListTile(
         selected: selected,
-        onTap: () {},
+        onTap: action,
         leading: Icon(
           icon,
           size: 25,
