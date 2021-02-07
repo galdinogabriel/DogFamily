@@ -1,8 +1,11 @@
 import 'package:dogfamily/models/anuncio.dart';
+import 'package:dogfamily/screens/tela_chat.dart';
 import 'package:dogfamily/widgets/detalhe_cao_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+
+import '../routes/app_routes.dart';
 
 class TelaAnuncio extends StatelessWidget {
   @override
@@ -140,7 +143,9 @@ class TelaAnuncio extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT);
+        },
         child: Icon(Icons.chat_bubble_outline),
       ),
     );

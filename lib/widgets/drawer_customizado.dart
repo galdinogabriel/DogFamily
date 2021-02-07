@@ -13,9 +13,8 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
-  onSelectAction() {
-    Navigator.of(context).pushNamed(AppRoutes.TELA_CONTA_USUARIO,
-        arguments: widget.salvarDadosUsuarios);
+  void onTap() {
+    Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT_HOME);
   }
 
   @override
@@ -56,9 +55,9 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               ),
               _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
               _buildTile(Icons.edit, "Doar um cão", false),
-              _buildTile(Icons.forum, "Chat", false),
+              _buildTile(Icons.forum, "Chat", false, onTap),
               _buildTile(Icons.favorite, "Favoritos", false),
-              _buildTile(Icons.person, "Minha Conta", false, onSelectAction),
+              _buildTile(Icons.person, "Minha Conta", false, onTap),
               Divider(),
               _buildBottomTile("Ajuda e Contato"),
               _buildBottomTile("Dúvidas Frequentes"),
@@ -74,16 +73,14 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
   }
 
   Widget _buildTile(IconData icon, String text, bool selected,
-      [Function action]) {
+      [Function onTap]) {
     return ListTileTheme(
       selectedColor: Colors.orange,
       child: ListTile(
         selected: selected,
-        onTap: action,
-        leading: Icon(
-          icon,
-          size: 25,
-        ),
+        onTap: () {
+          onTap();
+        },
         title: Text(
           text,
           style: TextStyle(fontSize: 16),
