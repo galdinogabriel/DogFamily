@@ -2,6 +2,7 @@ import 'package:dogfamily/routes/app_routes.dart';
 import 'package:dogfamily/widgets/item_card_widget.dart';
 import 'package:flutter/material.dart';
 import '../models/anuncio.dart';
+import 'package:intl/intl.dart';
 
 class AnunciosCaes extends StatelessWidget {
   //Lista de usuarios apartir da arquivo data
@@ -42,9 +43,8 @@ class AnunciosCaes extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "${anuncios[i].quandoCriado.toString()}, ${anuncios[i].anunciante.endereco}",
-                      style: TextStyle(color: Colors.grey),
-                    ),
+                        "${DateFormat('dd/MMM').format(anuncios[i].quandoCriado)}, ${anuncios[i].anunciante.endereco}",
+                        style: TextStyle(color: Colors.grey)),
                   ],
                 ),
               ),

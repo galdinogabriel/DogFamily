@@ -2,6 +2,7 @@ import 'package:dogfamily/models/anuncio.dart';
 import 'package:dogfamily/widgets/detalhe_cao_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class TelaAnuncio extends StatelessWidget {
   @override
@@ -71,7 +72,7 @@ class TelaAnuncio extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    "Publicado em ${anuncio.quandoCriado}",
+                    "Publicado em ${DateFormat('dd/MM/y').format(anuncio.quandoCriado)}",
                     style: TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                 ],
