@@ -8,13 +8,13 @@ class TelaAnuncio extends StatelessWidget {
   Widget build(BuildContext context) {
     final String sim = "Sim";
     final String nao = "Não";
-    final Anuncio anuncio =
-        ModalRoute.of(context).settings.arguments as Anuncio;
-    final porte = anuncio.anunciante.cao.getPorte();
+    final anuncio = ModalRoute.of(context).settings.arguments as Anuncio;
+
+    final String porte = anuncio.cao.getPorte();
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(anuncio.anunciante.cao.raca),
+        title: Text(anuncio.cao.raca),
         centerTitle: true,
         actions: <Widget>[
           IconButton(
@@ -30,7 +30,7 @@ class TelaAnuncio extends StatelessWidget {
               height: 300,
               width: double.infinity,
               child: Image.network(
-                anuncio.anunciante.cao.imageUrl,
+                anuncio.cao.imageUrl,
                 fit: BoxFit.cover,
               ),
             ),
@@ -38,7 +38,7 @@ class TelaAnuncio extends StatelessWidget {
               padding: EdgeInsets.only(top: 20, bottom: 0, left: 15, right: 15),
               child: Row(
                 children: [
-                  Text(anuncio.anunciante.cao.raca,
+                  Text(anuncio.cao.raca,
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w500)),
                 ],
@@ -118,16 +118,18 @@ class TelaAnuncio extends StatelessWidget {
                 ],
               ),
             ),
-            anuncio.anunciante.cao.temDoenca
-                ? DetalheCaoWidget("Tem doença?", sim)
-                : DetalheCaoWidget("Tem doença?", nao),
-            anuncio.anunciante.cao.temDeficienciaFisica
+            DetalheCaoWidget("Idade", anuncio.cao.idade.toString()),
+            DetalheCaoWidget("Sexo", anuncio.cao.sexo),
+            anuncio.cao.temDeficienciaFisica
                 ? DetalheCaoWidget("Tem deficiencia física?", sim)
                 : DetalheCaoWidget("Tem deficiencia física?", nao),
-            anuncio.anunciante.cao.usaRemedioControlado
+            anuncio.cao.temDoenca
+                ? DetalheCaoWidget("Tem doença?", sim)
+                : DetalheCaoWidget("Tem doença?", nao),
+            anuncio.cao.usaRemedioControlado
                 ? DetalheCaoWidget("Usa remédio controlado?", sim)
                 : DetalheCaoWidget("Usa remédio controlado?", nao),
-            DetalheCaoWidget("Porte", porte),
+            DetalheCaoWidget("Porte físico", porte),
             Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 50),
               child: Divider(),

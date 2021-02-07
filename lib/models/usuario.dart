@@ -8,7 +8,6 @@ class Usuario {
   String email;
   String imagemPerfilURL;
   String endereco;
-  Cao cao;
 
   //construtor nomedado
   Usuario({
@@ -18,6 +17,5 @@ class Usuario {
     @required this.email,
     @required this.imagemPerfilURL,
     @required this.endereco,
-    this.cao,
   });
 }

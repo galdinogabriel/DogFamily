@@ -1,10 +1,9 @@
-import 'package:dogfamily/models/anuncio.dart';
-import 'package:dogfamily/models/usuario.dart';
 import 'package:flutter/foundation.dart';
 
 class Cao {
   String raca;
   int idade;
+  String sexo;
   String imageUrl;
   bool temDeficienciaFisica;
   bool temDoenca;
@@ -15,6 +14,7 @@ class Cao {
   Cao({
     @required this.raca,
     @required this.idade,
+    @required this.sexo,
     @required this.imageUrl,
     @required this.temDeficienciaFisica,
     @required this.temDoenca,

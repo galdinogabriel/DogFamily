@@ -2,6 +2,10 @@ import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class BotaoAnunciarCao extends StatelessWidget {
+  //funcao de referencia do feeed
+  final Function addAnuncio;
+  BotaoAnunciarCao(this.addAnuncio);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +17,8 @@ class BotaoAnunciarCao extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           onTap: () {
-            Navigator.of(context).pushNamed(AppRoutes.TELA_CADASTRAR_CAO);
+            Navigator.of(context)
+                .pushNamed(AppRoutes.TELA_CADASTRAR_CAO, arguments: addAnuncio);
           },
           child: Container(
             height: 50,

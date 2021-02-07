@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         AppRoutes.HOME: (ctx) => TelaFeed(),
-        AppRoutes.TELA_CADASTRAR_CAO: (ctx) => TelaAnunciarCao(),
+        AppRoutes.TELA_CADASTRAR_CAO: (ctx) => TelaCadastrarCao(),
         AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnuncio()
       },
     );

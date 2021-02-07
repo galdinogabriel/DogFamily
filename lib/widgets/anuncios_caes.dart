@@ -1,17 +1,13 @@
 import 'package:dogfamily/routes/app_routes.dart';
 import 'package:dogfamily/widgets/item_card_widget.dart';
 import 'package:flutter/material.dart';
-import '../data/data.dart';
 import '../models/anuncio.dart';
 
-class AnunciosCaes extends StatefulWidget {
-  @override
-  _AnunciosCaesState createState() => _AnunciosCaesState();
-}
-
-class _AnunciosCaesState extends State<AnunciosCaes> {
+class AnunciosCaes extends StatelessWidget {
   //Lista de usuarios apartir da arquivo data
-  List<Anuncio> anuncios = ANUNCIOS_DETALHES;
+  final List<Anuncio> anuncios;
+
+  const AnunciosCaes([this.anuncios]);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +23,7 @@ class _AnunciosCaesState extends State<AnunciosCaes> {
             child: Padding(
               padding: const EdgeInsets.all(5),
               child: ItemCardWidget(
-                urlImagem: anuncios[i].anunciante.cao.imageUrl,
+                urlImagem: anuncios[i].cao.imageUrl,
                 description: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +35,7 @@ class _AnunciosCaesState extends State<AnunciosCaes> {
                       ),
                     ),
                     Text(
-                      anuncios[i].anunciante.cao.raca,
+                      anuncios[i].cao.raca,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 23,
