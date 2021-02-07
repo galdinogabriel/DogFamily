@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.pink,
       ),
       routes: {
-        AppRoutes.TELA_LOGIN: (ctx) => Login(),
+        AppRoutes.TELA_LOGIN: (ctx) => LoginPage(),
         AppRoutes.CADASTRO_USUARIO: (ctx) => TelaCadastroUsuario(),
-        AppRoutes.HOME: (ctx) => TelaFeed(),
+        AppRoutes.FEED: (ctx) => TelaFeed(),
         AppRoutes.TELA_CADASTRAR_CAO: (ctx) => TelaCadastrarCao(),
         AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnuncio()
       },

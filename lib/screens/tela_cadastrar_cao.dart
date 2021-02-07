@@ -326,7 +326,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                 onTap: () {
                   if (_formKey.currentState.validate()) {
                     submitForm();
-                    Navigator.of(context).pushNamed(AppRoutes.HOME);
+                    Navigator.of(context).pushNamed(AppRoutes.FEED);
                   }
                 },
                 child: Container(

@@ -1,24 +1,5 @@
-import 'package:dogfamily/widgets/anuncios_caes.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
+import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:dogfamily/widgets/drawer_customizado.dart';
-import 'package:dogfamily/widgets/item_card_widget.dart';
-import 'package:dogfamily/widgets/barra_filtro_raca.dart';
-import 'package:dogfamily/widgets/botao_anunciar_cao.dart';
-import 'package:flutter/material.dart';
-
-void main() => runApp(Login());
-
-class Login extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
-  }
-}
 
 class LoginPage extends StatefulWidget {
   @override
@@ -101,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildLoginButton() {
+  Widget _buildLoginButton(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -115,7 +96,9 @@ class _LoginPageState extends State<LoginPage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.FEED);
+            },
             child: Text(
               "Entrar",
               style: TextStyle(
@@ -162,8 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                 _buildEmailRow(),
                 _buildPasswordRow(),
                 _buildForgetPasswordButton(),
-                _buildLoginButton(),
-              
+                _buildLoginButton(context),
               ],
             ),
           ),
