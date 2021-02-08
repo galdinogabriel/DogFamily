@@ -87,35 +87,41 @@ class ChatModel {
 
 List<ChatModel> dummyData = [
   ChatModel(
-      name: "Abrãao",
+      name: "Gabriel Almeida",
       message: "Oi",
       time: "10:34",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://st4.depositphotos.com/13193658/39348/i/600/depositphotos_393489484-stock-photo-handsome-man-smiling-camera-living.jpg"),
   ChatModel(
-      name: "Arliene",
+      name: "Rafaela Sales",
       message: "Oi",
       time: "6:20",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://st.depositphotos.com/1144472/2324/i/600/depositphotos_23240122-stock-photo-happy-smiling-young-woman-over.jpg"),
   ChatModel(
-      name: "Eduardo",
+      name: "Júnior Santos",
       message: "Olá",
       time: "7:40",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://st.depositphotos.com/1594308/2420/i/600/depositphotos_24207443-stock-photo-braces-smile.jpg"),
   ChatModel(
-      name: "Barbara",
+      name: "Juliana Silva",
       message: "Olá",
       time: "1:10",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://static1.sorrisologia.com.br/articles/3/22/63/@/10365-sorrir-faz-bem-pra-vida-e-autoestima-de-slider_medias_mobile-1.jpg"),
   ChatModel(
-      name: "ajax",
+      name: "Romeu Abreu",
       message: "Oi, Boa tarde",
       time: "4:00",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://image.freepik.com/fotos-gratis/conceito-de-pessoas-e-estilo-de-vida-homem-caucasiano-jovem-atraente-de-bom-humor-camisa-azul-de-mangas-compridas-sorrindo-alegremente-mostrando-os-dentes-brancos-perfeitos-felizes-com-noticias-positivas-mantendo-os-bracos-cruzados_176420-13280.jpg"),
   ChatModel(
-      name: "Bruno",
+      name: "Gustavo Alves",
       message: "Oii",
       time: "3:15",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://cdn.pixabay.com/photo/2019/06/27/13/10/selfie-4302321_960_720.jpg"),
 ];
 
 Cao caoModelo = Cao(

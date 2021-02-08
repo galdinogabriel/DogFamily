@@ -23,7 +23,6 @@ class _TelaFeedState extends State<TelaFeed> {
 
   @override
   Widget build(BuildContext context) {
-    print("${anuncios.length} inicial");
     return Scaffold(
       drawer: CustomDrawerWidget(addAnuncio),
       appBar: AppBar(

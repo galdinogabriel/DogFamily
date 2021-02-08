@@ -1,21 +1,7 @@
+import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(TelaCadastroUsuario());
-
-class TelaCadastroUsuario extends StatelessWidget {
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Cadastro de usuário',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
-      home: Cadastro(),
-    );
-  }
-}
-
-class Cadastro extends StatefulWidget {
+class TelaCadastroUsuario extends StatefulWidget {
   CadastroState createState() => CadastroState();
 }
 
@@ -71,13 +57,7 @@ class CadastroState extends State {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(50.0, 15.0, 50.0, 15.0),
         onPressed: () {
-          User user = User();
-          user.email = emailcontroller.text;
-          user.name = namecontroller.text;
-          user.endereco = enderecocontroller.text;
-          user.senha = senhacontroller.text;
-
-          showAlertDialog(context, user);
+          Navigator.of(context).pushNamed(AppRoutes.FEED);
         },
         child: Text(
           "Submit",
@@ -98,8 +78,7 @@ class CadastroState extends State {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Formulario de cadastro",
-                    style: TextStyle(color: Colors.red)),
+                Text("Novo Usuário", style: TextStyle(color: Colors.grey[500])),
                 SizedBox(height: 45.0),
                 emailField,
                 SizedBox(height: 25.0),
@@ -122,41 +101,4 @@ class CadastroState extends State {
       ),
     );
   }
-}
-
-showAlertDialog(BuildContext context, User user) {
-  Widget gotIt = FlatButton(
-    child: Text("Ir"),
-    onPressed: () {
-      Navigator.of(context, rootNavigator: true).pop('alert');
-    },
-  );
-  AlertDialog alert = AlertDialog(
-    title: Text("Meu Perfil"),
-    content: Text(user.email +
-        "\n" +
-        user.name +
-        "\n" +
-        user.endereco +
-        "\n" +
-        user.senha),
-    actions: [
-      gotIt,
-    ],
-  );
-
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
-}
-
-//model class
-class User {
-  String email;
-  String name;
-  String endereco;
-  String senha;
 }

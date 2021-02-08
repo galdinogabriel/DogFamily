@@ -23,6 +23,10 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
         .pushNamed(AppRoutes.TELA_CADASTRAR_CAO, arguments: widget.addAnuncio);
   }
 
+  void onTapToMinhaConta() {
+    Navigator.of(context).pushNamed(AppRoutes.TELA_CONTA_USUARIO);
+  }
+
   void onTapToExit() {
     SystemNavigator.pop();
   }
@@ -70,7 +74,7 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
               _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
               _buildTile(Icons.edit, "Doar um cão", false, onTapToDoar),
               _buildTile(Icons.forum, "Chat", false, onTapToChat),
-              _buildTile(Icons.person, "Minha Conta", false),
+              _buildTile(Icons.person, "Minha Conta", false, onTapToMinhaConta),
               Divider(),
               _buildTile(Icons.exit_to_app, "Sair", false),
             ],

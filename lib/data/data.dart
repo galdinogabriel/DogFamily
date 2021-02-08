@@ -141,5 +141,5 @@ List<Anuncio> ANUNCIOS_DETALHES = [
       id: 1,
       anunciante: USUARIOS[4],
       quandoCriado: DateTime.now(),
-      descricao: "Bem grande, mas não morde, gosta mt de carinho"),
+      descricao: "Bem grande, mas não morde"),
 ];

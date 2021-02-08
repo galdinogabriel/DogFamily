@@ -30,7 +30,6 @@ class ChatScreenState extends State<ChatScreen> {
     setState(() {
       //used to rebuild our widget
       _messages.insert(0, chatMessage1);
-      _messages.insert(0, chatMessage2);
     });
   }
 

@@ -28,100 +28,80 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget _buildEmailRow() {
+  Widget _buildForm(BuildContext context) {
     TextEditingController email = TextEditingController();
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: TextFormField(
-        controller: email,
-        keyboardType: TextInputType.emailAddress,
-        validator: (value) {
-          if (value != USUARIOS[0].login || value.isEmpty) {
-            return 'Login não econtrado, tente novamente';
-          } else {
-            return null;
-          }
-        },
-        decoration: InputDecoration(
-            prefixIcon: Icon(
-              Icons.email,
-              color: Colors.pink,
+    TextEditingController password = TextEditingController();
+    return Form(
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: TextFormField(
+              controller: email,
+              keyboardType: TextInputType.emailAddress,
+              validator: (value) {
+                if (value != USUARIOS[0].login || value.isEmpty) {
+                  return 'Login incorreto!';
+                } else {
+                  return null;
+                }
+              },
+              decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    Icons.email,
+                    color: Colors.pink,
+                  ),
+                  labelText: 'Digite seu E-mail'),
             ),
-            labelText: 'Digite seu E-mail'),
-      ),
-    );
-  }
-
-  Widget _buildPasswordRow() {
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: TextFormField(
-        validator: (value) {
-          if (value != USUARIOS[0].login || value.isEmpty) {
-            return 'Login não econtrado, tente novamente';
-          } else {
-            return null;
-          }
-        },
-        keyboardType: TextInputType.text,
-        obscureText: true,
-        onChanged: (value) {
-          setState(() {
-            password = value;
-          });
-        },
-        decoration: InputDecoration(
-          prefixIcon: Icon(
-            Icons.lock,
-            color: Colors.pink,
           ),
-          labelText: 'Digite sua senha',
-        ),
-      ),
-    );
-  }
-
-  Widget _buildForgetPasswordButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        FlatButton(
-          onPressed: () {},
-          child: Text("Esqueci a senha"),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLoginButton(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Container(
-          height: 1.4 * (MediaQuery.of(context).size.height / 20),
-          width: 5 * (MediaQuery.of(context).size.width / 10),
-          margin: EdgeInsets.only(bottom: 20),
-          child: RaisedButton(
-            elevation: 5.0,
-            color: Colors.pink,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            ),
-            onPressed: () {
-              Navigator.of(context).pushNamed(AppRoutes.FEED);
-            },
-            child: Text(
-              "Entrar",
-              style: TextStyle(
-                color: Colors.white,
-                letterSpacing: 1.5,
-                fontSize: MediaQuery.of(context).size.height / 40,
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: TextFormField(
+              controller: password,
+              keyboardType: TextInputType.text,
+              obscureText: true,
+              decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.lock,
+                  color: Colors.pink,
+                ),
+                labelText: 'Digite sua senha',
               ),
             ),
           ),
-        )
-      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(12),
+                child: Container(
+                  height: 1.4 * (MediaQuery.of(context).size.height / 20),
+                  width: 5 * (MediaQuery.of(context).size.width / 10),
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: RaisedButton(
+                    elevation: 5.0,
+                    color: Colors.pink,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(AppRoutes.FEED);
+                    },
+                    child: Text(
+                      "Entrar",
+                      style: TextStyle(
+                        color: Colors.white,
+                        letterSpacing: 1.5,
+                        fontSize: MediaQuery.of(context).size.height / 40,
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 
@@ -154,10 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-                _buildEmailRow(),
-                _buildPasswordRow(),
-                _buildForgetPasswordButton(),
-                _buildLoginButton(context),
+                _buildForm(context),
               ],
             ),
           ),
@@ -173,7 +150,9 @@ class _LoginPageState extends State<LoginPage> {
         Padding(
           padding: EdgeInsets.only(top: 40),
           child: FlatButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.CADASTRO_USUARIO);
+            },
             child: RichText(
               text: TextSpan(children: [
                 TextSpan(
@@ -191,7 +170,7 @@ class _LoginPageState extends State<LoginPage> {
                     fontSize: MediaQuery.of(context).size.height / 40,
                     fontWeight: FontWeight.bold,
                   ),
-                )
+                ),
               ]),
             ),
           ),

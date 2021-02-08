@@ -1,3 +1,4 @@
+import 'package:dogfamily/screens/tela_conta_usuario.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dogfamily/routes/app_routes.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.TELA_ANUNCIO: (ctx) => TelaAnuncio(),
         AppRoutes.TELA_CHAT: (ctx) => ChatScreen(),
         AppRoutes.TELA_CHAT_HOME: (ctx) => ChatHome(),
+        AppRoutes.TELA_CONTA_USUARIO: (ctx) => TelaContaUsuario(),
       },
     );
   }

@@ -183,20 +183,22 @@ class MyCustomFormState extends State<MyCustomForm> {
                               hintStyle: TextStyle(color: Colors.grey[400])),
                         )),
                     Container(
-                        padding: EdgeInsets.all(8.0),
-                        child: TextFormField(
-                          validator: (value) {
-                            if (value.isEmpty) {
-                              return 'Preencha o campo obrigatório';
-                            }
-                            return null;
-                          },
-                          controller: descricao,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Descrição",
-                              hintStyle: TextStyle(color: Colors.grey[400])),
-                        )),
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return 'Preencha o campo obrigatório';
+                          }
+                          return null;
+                        },
+                        controller: descricao,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Descrição",
+                          hintStyle: TextStyle(color: Colors.grey[400]),
+                        ),
+                      ),
+                    ),
                     Container(
                       padding: EdgeInsets.all(8.0),
                       child: FormField<String>(

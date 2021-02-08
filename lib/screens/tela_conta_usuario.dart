@@ -31,12 +31,12 @@ class MyCustomFormState extends State<MyCustomForm> {
   //variavel de controle do furmulario
   final _formKey = GlobalKey<FormState>();
 
-  final login = TextEditingController(text: USUARIOS[0].login);
-  final senha = TextEditingController(text: USUARIOS[0].senha);
-  final email = TextEditingController(text: USUARIOS[0].email);
+  final login = TextEditingController(text: USUARIOS[5].login);
+  final senha = TextEditingController(text: USUARIOS[5].senha);
+  final email = TextEditingController(text: USUARIOS[5].email);
   final imagemPerfilUrl =
-      TextEditingController(text: USUARIOS[0].imagemPerfilURL);
-  final endereco = TextEditingController(text: USUARIOS[0].endereco);
+      TextEditingController(text: USUARIOS[5].imagemPerfilURL);
+  final endereco = TextEditingController(text: USUARIOS[5].endereco);
 
   void submitForm(Function salvar) {
     Usuario editUser = Usuario(
@@ -45,7 +45,7 @@ class MyCustomFormState extends State<MyCustomForm> {
       email: email.text,
       imagemPerfilURL: imagemPerfilUrl.text,
       endereco: endereco.text,
-      id: USUARIOS[0].id,
+      id: USUARIOS[5].id,
     );
 
     setState(() {
@@ -55,8 +55,6 @@ class MyCustomFormState extends State<MyCustomForm> {
 
   @override
   Widget build(BuildContext context) {
-    final Function salvarDadosUsuario =
-        ModalRoute.of(context).settings.arguments;
     return Form(
       key: _formKey,
       child: Padding(
@@ -167,11 +165,7 @@ class MyCustomFormState extends State<MyCustomForm> {
               ),
               InkWell(
                 onTap: () {
-                  if (_formKey.currentState.validate()) {
-                    salvarDadosUsuario();
-                    submitForm(salvarDadosUsuario);
-                    Navigator.of(context).pushNamed(AppRoutes.FEED);
-                  }
+                  Navigator.of(context).pushNamed(AppRoutes.FEED);
                 },
                 child: Container(
                   height: 50,
