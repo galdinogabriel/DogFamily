@@ -8,7 +8,7 @@ List<Usuario> USUARIOS = [
     id: 1,
     email: "gabrielmatos0@gmail.com",
     endereco: "Cohab",
-    imagemPerfilURL: "www.photo1.com",
+    imagemPerfilURL: "photo.com",
     login: "Gabriel Matos",
     senha: "admin",
   ),
@@ -43,6 +43,15 @@ List<Usuario> USUARIOS = [
     imagemPerfilURL: "www.photo1.com",
     login: "Gabriel Gairton",
     senha: "1313",
+  ),
+  Usuario(
+    id: 1,
+    email: "Samarasz0@gmail.com",
+    endereco: "Novo Estrela",
+    imagemPerfilURL:
+        "https://exame.com/wp-content/uploads/2017/05/thinkstockphotos-532555574-e1494592049333.jpg",
+    login: "Samara Souza",
+    senha: "admin",
   ),
 ];
 

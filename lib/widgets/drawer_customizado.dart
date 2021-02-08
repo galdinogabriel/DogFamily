@@ -1,3 +1,4 @@
+import 'package:dogfamily/data/data.dart';
 import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,17 +43,23 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: Theme.of(context).accentColor,
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.white,
+                    child: Container(
+                      width: 190,
+                      height: 190,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image:
+                                  NetworkImage(USUARIOS[5].imagemPerfilURL))),
                     ),
                   ),
                   title: Text(
-                    "Acesse sua conta agora!",
+                    "samara Souza",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   subtitle: Text(
-                    "Clique aqui",
+                    USUARIOS[5].email,
                     style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                 ),
