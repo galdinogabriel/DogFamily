@@ -70,30 +70,36 @@ List<ChatModel> dummyData = [
       name: "Bikal Thapa",
       message: "Hello chat ui",
       time: "10:34",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://api.time.com/wp-content/uploads/2017/12/terry-crews-person-of-year-2017-time-magazine-2.jpg?w=800&quality=85"),
   ChatModel(
       name: "Neeraj Neupane",
       message: "Hi when should we fix meeting",
       time: "6:20",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80"),
   ChatModel(
       name: "Prem Pun",
       message: "Hi Binay",
       time: "7:40",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOihucDAJFX1CSF7d1YWC01spLTfkjAemRdA&usqp=CAU"),
   ChatModel(
       name: "Bipin Pandey",
       message: "Hello",
       time: "1:10",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"),
   ChatModel(
       name: "Manjar Hussain",
       message: "Hello Binay Can we talk",
       time: "4:00",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://images.unsplash.com/photo-1548543604-a87c9909abec?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTQ5fHxwZXJzb258ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
   ChatModel(
       name: "Henric Siemsen",
       message: "Binay can we have a chat",
       time: "3:15",
-      avatarUrl: "http://www.binaythapa.com.np/img/about.jpg"),
+      avatarUrl:
+          "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"),
 ];
