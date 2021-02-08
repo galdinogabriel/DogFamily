@@ -1,6 +1,5 @@
 import 'package:dogfamily/data/data.dart';
 import 'package:dogfamily/models/anuncio.dart';
-import 'package:dogfamily/models/usuario.dart';
 import 'package:dogfamily/widgets/anuncios_caes.dart';
 import 'package:dogfamily/widgets/barra_filtro_raca.dart';
 import 'package:flutter/material.dart';
@@ -22,28 +21,15 @@ class _TelaFeedState extends State<TelaFeed> {
     });
   }
 
-  void salvarContaUsuario() {
-    print("coisou");
-  }
-
   @override
   Widget build(BuildContext context) {
     print("${anuncios.length} inicial");
     return Scaffold(
-      drawer: CustomDrawerWidget(salvarContaUsuario),
+      drawer: CustomDrawerWidget(addAnuncio),
       appBar: AppBar(
         title: Text("Dog Family"),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.favorite_border, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
+        actions: <Widget>[],
       ),
       body: Container(
         child: Stack(

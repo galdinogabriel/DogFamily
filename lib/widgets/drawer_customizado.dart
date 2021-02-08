@@ -1,10 +1,10 @@
 import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomDrawerWidget extends StatefulWidget {
-  final Function salvarDadosUsuarios;
-
-  CustomDrawerWidget(this.salvarDadosUsuarios);
+  final Function addAnuncio;
+  CustomDrawerWidget(this.addAnuncio);
 
   @override
   CustomDrawerWidgetState createState() {
@@ -13,14 +13,21 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
-  void onTap() {
+  void onTapToChat() {
     Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT_HOME);
+  }
+
+  void onTapToDoar() {
+    Navigator.of(context)
+        .pushNamed(AppRoutes.TELA_CADASTRAR_CAO, arguments: widget.addAnuncio);
+  }
+
+  void onTapToExit() {
+    SystemNavigator.pop();
   }
 
   @override
   Widget build(BuildContext context) {
-    widget.salvarDadosUsuarios();
-
     return Drawer(
       child: Scrollbar(
         child: SingleChildScrollView(
@@ -54,17 +61,11 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                 width: 15,
               ),
               _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
-              _buildTile(Icons.edit, "Doar um cão", false),
-              _buildTile(Icons.forum, "Chat", false, onTap),
-              _buildTile(Icons.favorite, "Favoritos", false),
-              _buildTile(Icons.person, "Minha Conta", false, onTap),
+              _buildTile(Icons.edit, "Doar um cão", false, onTapToDoar),
+              _buildTile(Icons.forum, "Chat", false, onTapToChat),
+              _buildTile(Icons.person, "Minha Conta", false),
               Divider(),
-              _buildBottomTile("Ajuda e Contato"),
-              _buildBottomTile("Dúvidas Frequentes"),
-              _buildBottomTile("Dicas de Segurança"),
-              _buildBottomTile("Termos de Uso"),
-              _buildBottomTile("Avalie na GooglePlay"),
-              _buildBottomTile("Curta no Facebook"),
+              _buildTile(Icons.exit_to_app, "Sair", false),
             ],
           ),
         ),
@@ -77,10 +78,9 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
     return ListTileTheme(
       selectedColor: Colors.orange,
       child: ListTile(
+        leading: Icon(icon),
         selected: selected,
-        onTap: () {
-          onTap();
-        },
+        onTap: onTap,
         title: Text(
           text,
           style: TextStyle(fontSize: 16),

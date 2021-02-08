@@ -12,7 +12,10 @@ class ChatScreenState extends State<ChatHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Chat"),
+        centerTitle: true,
+      ),
       body: ListView.builder(
         itemCount: dummyData.length,
         itemBuilder: (context, i) => Column(
