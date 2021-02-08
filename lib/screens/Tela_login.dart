@@ -1,3 +1,4 @@
+import 'package:dogfamily/data/data.dart';
 import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -28,14 +29,18 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _buildEmailRow() {
+    TextEditingController email = TextEditingController();
     return Padding(
       padding: EdgeInsets.all(8),
       child: TextFormField(
+        controller: email,
         keyboardType: TextInputType.emailAddress,
-        onChanged: (value) {
-          setState(() {
-            email = value;
-          });
+        validator: (value) {
+          if (value != USUARIOS[0].login || value.isEmpty) {
+            return 'Login não econtrado, tente novamente';
+          } else {
+            return null;
+          }
         },
         decoration: InputDecoration(
             prefixIcon: Icon(
@@ -51,6 +56,13 @@ class _LoginPageState extends State<LoginPage> {
     return Padding(
       padding: EdgeInsets.all(8),
       child: TextFormField(
+        validator: (value) {
+          if (value != USUARIOS[0].login || value.isEmpty) {
+            return 'Login não econtrado, tente novamente';
+          } else {
+            return null;
+          }
+        },
         keyboardType: TextInputType.text,
         obscureText: true,
         onChanged: (value) {

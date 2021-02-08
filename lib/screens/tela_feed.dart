@@ -17,12 +17,7 @@ class _TelaFeedState extends State<TelaFeed> {
 
   void addAnuncio(Anuncio anuncio) {
     setState(() {
-      print(anuncio.cao.temDoenca);
-      print(anuncio.cao.temDeficienciaFisica);
-      print(anuncio.cao.usaRemedioControlado);
       anuncios.add(anuncio);
-      print("foi adicionado");
-      print(anuncios.length);
     });
   }
 
@@ -30,20 +25,11 @@ class _TelaFeedState extends State<TelaFeed> {
   Widget build(BuildContext context) {
     print("${anuncios.length} inicial");
     return Scaffold(
-      drawer: CustomDrawerWidget(),
+      drawer: CustomDrawerWidget(addAnuncio),
       appBar: AppBar(
         title: Text("Dog Family"),
         centerTitle: true,
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.favorite_border, color: Colors.white),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white),
-            onPressed: () {},
-          ),
-        ],
+        actions: <Widget>[],
       ),
       body: Container(
         child: Stack(

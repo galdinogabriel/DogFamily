@@ -144,7 +144,10 @@ class TelaAnuncio extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         onPressed: () {
-          Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ChatScreen(anuncio)),
+          );
         },
         child: Icon(Icons.chat_bubble_outline),
       ),

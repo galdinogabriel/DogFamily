@@ -1,7 +1,11 @@
+import 'package:dogfamily/data/data.dart';
+import 'package:dogfamily/models/anuncio.dart';
 import 'package:flutter/material.dart';
 
 class ChatScreen extends StatefulWidget {
-  String name = 'Gabriel';
+  final Anuncio name;
+
+  ChatScreen([this.name]);
   @override
   State createState() => new ChatScreenState();
 }
@@ -15,12 +19,12 @@ class ChatScreenState extends State<ChatScreen> {
     textEditingController.clear();
     ChatMessage chatMessage1 = new ChatMessage(
       text: text,
-      name: widget.name,
+      name: USUARIOS[5].login,
       isMe: false,
     );
     ChatMessage chatMessage2 = new ChatMessage(
       text: text,
-      name: "Binay",
+      name: widget.name.anunciante.login,
       isMe: true,
     );
     setState(() {
@@ -62,7 +66,7 @@ class ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.name),
+        title: Text(widget.name.anunciante.login),
       ),
       body: new Column(
         children: <Widget>[

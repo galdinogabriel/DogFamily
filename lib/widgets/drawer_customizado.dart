@@ -1,8 +1,12 @@
+import 'package:dogfamily/data/data.dart';
+import 'package:dogfamily/routes/app_routes.dart';
 import 'package:flutter/material.dart';
-
-import '../routes/app_routes.dart';
+import 'package:flutter/services.dart';
 
 class CustomDrawerWidget extends StatefulWidget {
+  final Function addAnuncio;
+  CustomDrawerWidget(this.addAnuncio);
+
   @override
   CustomDrawerWidgetState createState() {
     return new CustomDrawerWidgetState();
@@ -10,8 +14,17 @@ class CustomDrawerWidget extends StatefulWidget {
 }
 
 class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
-  void onTap() {
+  void onTapToChat() {
     Navigator.of(context).pushNamed(AppRoutes.TELA_CHAT_HOME);
+  }
+
+  void onTapToDoar() {
+    Navigator.of(context)
+        .pushNamed(AppRoutes.TELA_CADASTRAR_CAO, arguments: widget.addAnuncio);
+  }
+
+  void onTapToExit() {
+    SystemNavigator.pop();
   }
 
   @override
@@ -30,17 +43,23 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                   leading: CircleAvatar(
                     radius: 30,
                     backgroundColor: Theme.of(context).accentColor,
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.white,
+                    child: Container(
+                      width: 190,
+                      height: 190,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image:
+                                  NetworkImage(USUARIOS[5].imagemPerfilURL))),
                     ),
                   ),
                   title: Text(
-                    "Acesse sua conta agora!",
+                    "samara Souza",
                     style: TextStyle(color: Colors.white, fontSize: 18),
                   ),
                   subtitle: Text(
-                    "Clique aqui",
+                    USUARIOS[5].email,
                     style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                 ),
@@ -49,17 +68,11 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
                 width: 15,
               ),
               _buildTile(Icons.cloud_circle, "Anúncios de cães", true),
-              _buildTile(Icons.edit, "Doar um cão", false),
-              _buildTile(Icons.forum, "Chat", false, onTap),
-              _buildTile(Icons.favorite, "Favoritos", false),
+              _buildTile(Icons.edit, "Doar um cão", false, onTapToDoar),
+              _buildTile(Icons.forum, "Chat", false, onTapToChat),
               _buildTile(Icons.person, "Minha Conta", false),
               Divider(),
-              _buildBottomTile("Ajuda e Contato"),
-              _buildBottomTile("Dúvidas Frequentes"),
-              _buildBottomTile("Dicas de Segurança"),
-              _buildBottomTile("Termos de Uso"),
-              _buildBottomTile("Avalie na GooglePlay"),
-              _buildBottomTile("Curta no Facebook"),
+              _buildTile(Icons.exit_to_app, "Sair", false),
             ],
           ),
         ),
@@ -72,14 +85,9 @@ class CustomDrawerWidgetState extends State<CustomDrawerWidget> {
     return ListTileTheme(
       selectedColor: Colors.orange,
       child: ListTile(
+        leading: Icon(icon),
         selected: selected,
-        onTap: () {
-          onTap();
-        },
-        leading: Icon(
-          icon,
-          size: 25,
-        ),
+        onTap: onTap,
         title: Text(
           text,
           style: TextStyle(fontSize: 16),
